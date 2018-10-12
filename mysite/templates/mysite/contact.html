@@ -1,6 +1,29 @@
 {%extends 'mysite/base.html'%}
 {% block 'content'%}
-<h1> contact Page</h1>
-<p>dsahidasdajkdkadkasdbkadbakda</p>
+<h1> Contact Page</h1>
+<div class="container">
 
+<form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+       
+        <div class="form-group">
+                <label for="exampleInputEmail1">Subject</label>
+                <input name="subject" type="charField" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter subject">
+                <small id="emailHelp" class="form-text text-muted"></small>
+              </div>
+
+        <div class="form-group">
+                    <label for="exampleInputEmail1">Massage</label>
+                    <input name="massage" type="textArea" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Massage">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                  </div>
+        <button >Submit</button>
+      </form>
+    </div>
 {% endblock %}
